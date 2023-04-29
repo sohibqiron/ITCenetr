@@ -1,0 +1,60 @@
+{% extends "mainapp/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="card-body">
+    <h4 class="card-title">Mentor Table</h4>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Mentor ID</th>
+            <th>Full name</th>
+            <th>Direction</th>
+            <th>Birth date</th>
+            <th>Country</th>
+            <th>City</th>
+            <th>Adress</th>
+            <th>Salary</th>
+            <th>Final Salary</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for mentor in mentors %}
+          <tr>
+            <td>
+              {{ mentor.id }}
+            </td>
+            <td>
+              {{ mentor.full_name }}
+            </td>
+            <td>
+              {{ mentor.direction_teaching }}
+            </td>
+            <td>
+              {{ mentor.birth_date }}
+            </td>
+            <td>
+              {{ mentor.country }}
+            </td>
+            <td>
+              {{ mentor.city }}
+            </td>
+            <td>
+              {{ mentor.adress }}
+            </td>
+            <td>
+              {{ mentor.salary }}$
+            </td>
+            <td>
+              {{ mentor.final_salary }}$
+            </td>
+            <td><label class="badge badge-danger">Pending</label></td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+{% endblock %} 
